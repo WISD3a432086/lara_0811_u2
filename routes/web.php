@@ -25,6 +25,6 @@ Route::get('/', function () {
     return redirect('welcome');
 });
 
-Route::get('hello/{name}' , function($name) {
+Route::get('say/{name?}' ,['as' => 'hello.index' , function($name='Everybody') {
     return 'Hello, '.$name;
-});
+}]);
