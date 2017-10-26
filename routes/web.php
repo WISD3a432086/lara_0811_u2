@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return 'welcome';
+Route::get('hello/{name?}' , function($name='Everybody') {
+    return 'Hello, '.$name;
 });
 
 
@@ -38,3 +38,6 @@ Route::group(['prefix'=>'admin'],function(){
         return'admindashboard';
     });
 });
+
+Route::get('/',['as'=>'home.index','uses'=>
+    'HomeController@index']);
